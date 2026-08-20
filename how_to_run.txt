@@ -1,0 +1,9 @@
+conan install . --build=missing -s build_type=Debug
+
+cmake -S . -B build/Debug \
+    -DCMAKE_TOOLCHAIN_FILE=build/Debug/generators/conan_toolchain.cmake \
+    -DCMAKE_BUILD_TYPE=Debug
+
+cmake --build build/Debug
+
+./build/Debug/color_wars

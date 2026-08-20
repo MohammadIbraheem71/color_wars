@@ -9,6 +9,8 @@ find_package(raylib REQUIRED)
 add_executable(color_wars
     src/main.cpp
     src/cell/cell.cpp
-    src/grid/grid.cpp)
+    src/grid/grid.cpp
+    src/grid_manager/grid_manager.cpp
+    src/renderer/renderer.cpp)
 
 target_link_libraries(color_wars PRIVATE raylib)

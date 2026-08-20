@@ -21,9 +21,17 @@ class grid_manager{
         // switches the current player to the other player
         void switch_player();
 
+        // returns true if both players have made their initial moves
+        bool initial_moves_complete();
+
         // makes a move on the grid at the specified row and column
         void make_move(int row, int col);
 
-        // returns true if both players have made their initial moves
-        bool initial_moves_complete();
+
+        // calling this function manages explosions
+        // if there r no explosions, then this does nothing
+        void manage_explosions();
+
+        // returns current grid state
+        const grid& get_grid() const ;
 };

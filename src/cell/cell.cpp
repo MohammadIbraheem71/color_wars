@@ -14,7 +14,7 @@ void cell::set_owner(player player_value){
     owner = player_value;
 }
 
-player cell::get_owner(){
+player cell::get_owner() const{
     return owner;
 }
 

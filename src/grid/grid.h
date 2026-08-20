@@ -37,10 +37,10 @@ class grid{
         grid(int in_rows, int in_cols);
 
         // returns the number of rows in the grid
-        int get_rows();
+        int get_rows() const;
 
         // returns the number of columns in the grid
-        int get_cols();
+        int get_cols() const;
 
         // makes a player's move on the grid at the specified row and column
         // this does not account for the initial move
@@ -55,4 +55,7 @@ class grid{
         // to manage the explosions
         // if theres no explosions, then this function will do nothing
         void manage_explosions();
+
+        // returns the cell at the specified row and column
+        const cell& get_cell(int row, int col) const;
 };

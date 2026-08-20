@@ -22,7 +22,7 @@ class cell{
         void set_owner(player player_value);
 
         // get the current owner for this cell
-        player get_owner();
+        player get_owner() const;
 
         //resets the current cell, value to 0, owner to none
         void reset();

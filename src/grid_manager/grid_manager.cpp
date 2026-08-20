@@ -23,14 +23,27 @@ void grid_manager::switch_player(){
     }
 }
 
+bool grid_manager::initial_moves_complete(){
+    return player1_initial_move && player2_initial_move;
+}
+
 void grid_manager::make_move(int row, int col){
-    if(!initial_moves_complete()){
+    if(!grid_manager::initial_moves_complete()){
         // some player's initial move is not complete
         game_grid->make_initial_move(row, col, current_player);
     } else {
         // both players have made their initial moves
         game_grid->make_move(row, col, current_player);
-
-        grid_manager::switch_player();
     }
+
+    grid_manager::switch_player();
+
+}
+
+void grid_manager::manage_explosions(){
+    game_grid->manage_explosions();
+}
+
+const grid& grid_manager::get_grid() const {
+    return *game_grid;
 }

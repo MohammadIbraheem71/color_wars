@@ -1,5 +1,4 @@
 #include <iostream>
-#include <numbers>
 #include "grid.h"
 
 grid::grid(int in_rows, int in_cols){
@@ -81,11 +80,11 @@ void grid::process_explosions(player player_value){
     }
 }
 
-int grid::get_rows(){
+int grid::get_rows() const{
     return rows;
 }
 
-int grid::get_cols(){
+int grid::get_cols() const{
     return cols;
 }
 
@@ -128,4 +127,12 @@ void grid::manage_explosions(){
         std::cout<<"grid: processing explosions"<<std::endl;
         process_explosions(cell_grid[explosion_queue.front().row][explosion_queue.front().col].get_owner());
     }
+}
+
+const cell& grid::get_cell(int row, int col) const{
+    if (row < 0 || row >= rows || col < 0 || col >= cols){
+        throw std::out_of_range("row or column is out of range");
+    }
+
+    return cell_grid[row][col];
 }
