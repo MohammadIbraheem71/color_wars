@@ -9,6 +9,8 @@ grid_manager::grid_manager(int rows, int cols){
     game_grid = std::unique_ptr<grid>(new grid(rows, cols));
 }
 
+
+
 player grid_manager::get_current_player(){
     return current_player;
 }

@@ -26,3 +26,5 @@ conan.lock
 
 # OS files
 .DS_Store
+
+AGENTS.md
